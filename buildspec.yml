@@ -21,3 +21,5 @@ phases:
 artifacts:
   files:
     - '**/*'
+  name: reactjs-simple-todo-postgresql-build-artifacts
+  base-directory: 'build'
