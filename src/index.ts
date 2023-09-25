@@ -18,6 +18,9 @@ AppDataSource.initialize()
     app.use(cookieParser());
 
     app.use("/api/v1", routes);
+    app.get('/mm', (req, res) => {
+      res.send('Test Node Application')
+    })
 
     // UNHANDLED ROUTE
     // app.all('*', (req: Request, res: Response, next: NextFunction) => {
@@ -37,7 +40,7 @@ AppDataSource.initialize()
     //     }
     //   );
 
-    const port = process.env.PORT || 5000;
+    const port = process.env.REACT_APP_PORT || 5000;
     const server = http.createServer(app);
 
     server.listen(port, () => {

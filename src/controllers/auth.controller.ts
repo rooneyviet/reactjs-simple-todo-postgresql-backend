@@ -23,11 +23,11 @@ export const postLoginHandler = async (
     const findUser = await userRepository.findOneBy({ username: username });
 
     if (!findUser) {
-      return responseHandler.badRequest(res, "Invalid username or password");
+      return responseHandler.badRequest(res, "Invalid username or password2");
     }
 
     if (!(await User.comparePasswords(password, findUser?.password || ""))) {
-      return responseHandler.badRequest(res, "Invalid username or password");
+      return responseHandler.badRequest(res, "Invalid username or password2");
     }
 
     const { accessToken, refreshToken } = await signTokens(findUser);
